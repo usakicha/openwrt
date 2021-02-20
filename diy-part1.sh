@@ -18,6 +18,6 @@
 
 # Add IPQ40XX overclock patch
 ls
-cp ./999-ipq40xx-unlock-cpu-frequency.patch ./openwrt/target/linux/ipq40xx/patches-5.4/
+mv -vf ../999-ipq40xx-unlock-cpu-frequency.patch .//target/linux/ipq40xx/patches-5.4/
 git clone https://github.com/coolsnowwolf/lede
-cp -r ./lede/package/lean/luci-app-cpufreq/ ./openwrt/package/
+cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
