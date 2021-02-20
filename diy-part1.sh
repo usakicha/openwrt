@@ -18,5 +18,5 @@
 
 # Add IPQ40XX overclock patch
 git clone https://github.com/coolsnowwolf/lede
-cp -vf ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
+cp ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
 cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
