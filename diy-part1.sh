@@ -17,7 +17,6 @@
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # Add IPQ40XX overclock patch
-ls
-mv -vf ../999-ipq40xx-unlock-cpu-frequency.patch .//target/linux/ipq40xx/patches-5.4/
 git clone https://github.com/coolsnowwolf/lede
+cp -vf ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
 cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
