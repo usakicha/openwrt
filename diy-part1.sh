@@ -20,3 +20,6 @@
 git clone https://github.com/coolsnowwolf/lede
 cp ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
 cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
+
+# getToolchain
+wget https://downloads.openwrt.org/snapshots/targets/ipq40xx/generic/openwrt-sdk-ipq40xx-generic_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz
