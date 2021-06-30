@@ -26,6 +26,15 @@ cp -r ./openwrt-passwall/luci-app-passwall/ ./package/
 git clone https://github.com/coolsnowwolf/lede
 cp ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
 cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
+mkdir qsdk
+cd qsdk
+repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m caf_AU_LINUX_QSDK_NHSS.QSDK.6.1.1.R1_TARGET_ALL.3.0.308.00.1591.020.xml --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
+repo sync
+cd qsdk
+cp qca/configs/qsdk/ipq_open.config .config
+make package/symlinks
+make defconfig
+make V=s
 
 # getToolchain
 #wget https://downloads.openwrt.org/snapshots/targets/ipq40xx/generic/openwrt-sdk-ipq40xx-generic_gcc-8.4.0_musl_eabi.Linux-x86_64.tar.xz
