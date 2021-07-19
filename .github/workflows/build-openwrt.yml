@@ -60,7 +60,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        cd openwrt 
+        mkdir qsdk && cd qsdk
         repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m $REPO_BRANCH --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
         repo sync
 
