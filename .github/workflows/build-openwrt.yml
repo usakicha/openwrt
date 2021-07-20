@@ -63,6 +63,7 @@ jobs:
         cd $GITHUB_WORKSPACE && mkdir qsdk && cd qsdk
         repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m $REPO_BRANCH --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
         repo sync
+        cd $GITHUB_WORKSPACE && cp 999-openssl_1_1.patch qsdk/qsdk/tools/mkimage/patches/
 
     - name: Load custom feeds
       run: |
@@ -99,7 +100,6 @@ jobs:
         cp qca/configs/qsdk/ipq_open.config .config
         make package/symlinks
         make defconfig
-        make download -j8 || make -j1 V=s
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
