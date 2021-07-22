@@ -97,7 +97,6 @@ jobs:
       id: package
       run: |
         cd qsdk/qsdk
-        cp qca/configs/qsdk/ipq_open.config .config
         make package/symlinks
         make defconfig
 
