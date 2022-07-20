@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: caf_AU_LINUX_QSDK_NHSS.QSDK.11.5.R1_TARGET_ALL.11.5.0.7300.027.xml
+  REPO_URL: caf_AU_LINUX_QSDK_NHSS.QSDK.11.5.R2_TARGET_ALL.11.5.02.7576.012.xml
   REPO_BRANCH: caf_AU_LINUX_QSDK_NHSS.QSDK.11.5.R1_TARGET_ALL.11.5.0.7300.047.xml
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -61,7 +61,7 @@ jobs:
       run: |
         df -hT $PWD
         cd $GITHUB_WORKSPACE && mkdir qsdk && cd qsdk
-        repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m $REPO_BRANCH --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
+        repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m $REPO_URL --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
         repo sync
         cd $GITHUB_WORKSPACE && cp 999-openssl_1_1.patch qsdk/qsdk/tools/mkimage/patches/
 
