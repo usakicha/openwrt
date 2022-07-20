@@ -21,11 +21,11 @@
 #cp -r luci-app-xray ./package/
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git
-cp -r ./openwrt-passwall/luci-app-passwall/ ./package/
+#cp -r ./openwrt-passwall/luci-app-passwall/ ./package/
 
 git clone https://github.com/coolsnowwolf/lede
-cp ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
-cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
+#cp ./lede/target/linux/ipq40xx/patches-5.4/999-ipq40xx-unlock-cpu-frequency.patch ./target/linux/ipq40xx/patches-5.4/
+#cp -r ./lede/package/lean/luci-app-cpufreq/ ./package/
 #mkdir qsdk
 #cd qsdk
 #repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m caf_AU_LINUX_QSDK_NHSS.QSDK.6.1.1.R1_TARGET_ALL.3.0.308.00.1591.020.xml --repo-url=git://codeaurora.org/tools/repo.git --repo-branch=caf-stable
